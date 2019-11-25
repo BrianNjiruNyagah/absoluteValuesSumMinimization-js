@@ -1,0 +1,27 @@
+function absoluteValuesSumMinimization(a) {
+    //stores the initial values of the addition of their differnces
+    var compete;
+    //stores the closest values
+    var theOne;
+    //loop ensures that the value checking for the difference
+    //keeps on incrementing and its checked to confirm 
+    //if which value is the closest
+    for(var i = 0;i<a.length;i++){
+        var add = 0;
+        var arrayCounter = a[i];
+        //does all the addition of the differnces
+        var soln = a
+        .map(function(value){
+            add += Math.abs(value-arrayCounter);
+            return add;
+        });
+       if(i==0){
+           compete = soln[soln.length-1];
+           theOne = a[i];
+       }else if(compete>soln[soln.length-1]){
+           compete = soln[soln.length-1];
+           theOne = a[i];
+       }
+    }
+    return theOne;
+}
